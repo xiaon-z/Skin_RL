@@ -10,7 +10,7 @@ import random
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-import ReplayBuffer
+import ReplayBuffer_Due DDQN
 
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
@@ -21,7 +21,7 @@ class Agent:
         self.dataset = dataset
         self.clas = 2
         self.vocab_cat =list(range(self.clas))
-        self.memory = ReplayBuffer.ReplayBuffer(5000, self.vocab_cat)       # 两类结果（新冠）
+        self.memory = ReplayBuffer_Due DDQN.ReplayBuffer(5000, self.vocab_cat)       # 两类结果（新冠）
         self.net = DuelDDQN(config, dataset)
         self.config = config
         self.training_steps = self.config.training_steps
